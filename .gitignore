@@ -1,0 +1,26 @@
+# Node / Frontend dependencies
+node_modules/
+dist/
+dist-ssr/
+*.local
+.eslintcache
+
+# Python / Backend dependencies
+venv/
+.venv/
+__pycache__/
+*.py[cod]
+*$py.class
+db.sqlite3
+media/
+staticfiles/
+
+# Environment / Secret files
+.env
+.env*.local
+
+# IDEs & System files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
