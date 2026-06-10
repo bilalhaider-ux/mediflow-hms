@@ -12,6 +12,7 @@
   "dependencies": {
     "@daily-co/daily-js": "^0.90.0",
     "@tailwindcss/postcss": "^4.3.0",
+    "@vercel/analytics": "^2.0.1",
     "autoprefixer": "^10.5.0",
     "idb": "^8.0.3",
     "lucide-react": "^1.17.0",
