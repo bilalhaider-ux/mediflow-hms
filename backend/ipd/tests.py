@@ -103,7 +103,7 @@ class IPDAppTests(APITestCase):
         
         discharge_res = self.client.patch(detail_url, {
             "status": "DISCHARGED",
-            "discharge_date": "2026-06-10T12:00:00Z"
+            "discharge_date": "2026-06-12T12:00:00Z"
         })
         self.assertEqual(discharge_res.status_code, status.HTTP_200_OK)
         

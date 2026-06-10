@@ -57,11 +57,25 @@ class Appointment(SoftDeleteModel):
         import datetime
         from django.utils import timezone
         if self.appointment_date and self.start_time:
-            dt = datetime.datetime.combine(self.appointment_date, self.start_time)
+            appt_date = self.appointment_date
+            if isinstance(appt_date, str):
+                try:
+                    appt_date = datetime.datetime.strptime(appt_date, "%Y-%m-%d").date()
+                except ValueError:
+                    pass
+            s_time = self.start_time
+            if isinstance(s_time, str):
+                for fmt in ("%H:%M:%S", "%H:%M"):
+                    try:
+                        s_time = datetime.datetime.strptime(s_time, fmt).time()
+                        break
+                    except ValueError:
+                        pass
             try:
+                dt = datetime.datetime.combine(appt_date, s_time)
                 return timezone.make_aware(dt, timezone.get_current_timezone())
-            except ValueError:
-                return dt
+            except Exception:
+                return None
         return None
 
     def __str__(self):

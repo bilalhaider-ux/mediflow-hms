@@ -1,0 +1,8 @@
+Doc Count: 5
+Patient Count: 4
+Appt Count: 3
+Doc: 1 doctor_ahmad
+Doc: 2 dr_hassan
+Doc: 3 dr_zainab
+Doc: 4 dr_usman
+Doc: 5 dr_fatima
